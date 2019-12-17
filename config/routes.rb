@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/episode', to: "episodes#test"
   get '/podcast', to: "podcasts#test"
   post '/search', to: "listen_notes#search"
+  post '/login', to: "users#login"
 end

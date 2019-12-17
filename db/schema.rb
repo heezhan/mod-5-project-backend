@@ -10,33 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_173620) do
+ActiveRecord::Schema.define(version: 2019_12_17_210556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "episodes", force: :cascade do |t|
-    t.integer "podcast_id"
     t.string "api_id"
-    t.string "audio"
-    t.string "image"
-    t.string "title"
+    t.integer "podcast_id"
     t.string "thumbnail"
-    t.integer "pub_date_ms"
+    t.string "image"
+    t.string "podcast_title_original"
+    t.string "title_original"
+    t.string "publisher_original"
+    t.string "description_original"
+    t.string "audio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "playlist_episodes", force: :cascade do |t|
+    t.integer "playlist_id"
+    t.integer "episode_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "podcasts", force: :cascade do |t|
     t.string "api_id"
+    t.string "thumbnail"
     t.string "image"
     t.string "title"
+    t.string "publisher"
     t.string "country"
     t.string "language"
-    t.string "publisher"
-    t.string "thumbnail"
     t.string "description"
     t.integer "total_episodes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
