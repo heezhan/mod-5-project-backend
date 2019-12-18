@@ -39,6 +39,7 @@ welcome_to_ageless = Episode.find_or_create_by(
 
 ## Playlist ##
 playlist1 = Playlist.find_or_create_by(user: heejae, title: "Morning Commute Playlist")
+playlist2 = Playlist.find_or_create_by(user: heejae, title: "Shower Playlist")
 
 ## PlaylistEpisode ##
 playlist_episode1 = PlaylistEpisode.find_or_create_by(playlist: playlist1, episode: welcome_to_ageless)

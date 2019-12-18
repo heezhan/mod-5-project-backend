@@ -3,10 +3,19 @@ class UsersController < ApplicationController
         user = User.find_by(username: params[:username])
 
         if user && (user.password_digest == params[:password])
-            render json: user 
+            render json: user.to_json(serialize)
         else 
             render json: {message: "Incorrect username and/or password"}
         end 
 
     end 
+
+    private
+
+    def serialize
+        {
+            :include => { :playlists => {:include => [:playlist_episodes, :episodes] } },
+            :only => [:username, :id]
+        }
+    end
 end
