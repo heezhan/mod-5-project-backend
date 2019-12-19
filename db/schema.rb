@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_210556) do
 
   create_table "episodes", force: :cascade do |t|
     t.string "api_id"
-    t.integer "podcast_id"
+    t.string "podcast_id"
     t.string "thumbnail"
     t.string "image"
     t.string "podcast_title_original"
@@ -39,20 +39,6 @@ ActiveRecord::Schema.define(version: 2019_12_17_210556) do
   create_table "playlists", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "podcasts", force: :cascade do |t|
-    t.string "api_id"
-    t.string "thumbnail"
-    t.string "image"
-    t.string "title"
-    t.string "publisher"
-    t.string "country"
-    t.string "language"
-    t.string "description"
-    t.integer "total_episodes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
