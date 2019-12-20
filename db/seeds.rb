@@ -13,7 +13,8 @@ graham = User.find_or_create_by(username: "graham", password_digest: "password")
 
 ## Episode ##
 welcome_to_ageless = Episode.find_or_create_by(
-    api_id:"64f3f2d8691448ae8c914447f62e7a74",  
+    api_id:"64f3f2d8691448ae8c914447f62e7a74", 
+    podcast_id: "0a046a5dd2714fd68209a6f1ee10b2ee", 
     thumbnail:"https://cdn-images-1.listennotes.com/podcasts/ageless-kit-keenan-C4UXObIx0Re-w9UQt6odFE8.300x300.jpg",
     image:"https://cdn-images-1.listennotes.com/podcasts/ageless-kit-keenan-C4UXObIx0Re-w9UQt6odFE8.300x300.jpg",
     podcast_title_original:"Ageless",
