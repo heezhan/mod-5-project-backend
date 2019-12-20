@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post '/search', to: "listen_notes#search"
   post '/login', to: "users#login"
   post '/episode', to: "episodes#episode"
+  post '/playlist', to: "playlists#playlist"
 end
