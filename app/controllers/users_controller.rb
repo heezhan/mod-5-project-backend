@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
     def serialize
         {
-            :include => { :playlists => {:include => [:playlist_episodes, :episodes] } },
+            :include => { :playlists => { :include => [:playlist_episodes, :episodes => { :include => [:playlist_episodes, :playlists] }] } },
             :only => [:username, :id]
         }
     end

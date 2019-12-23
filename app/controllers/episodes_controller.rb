@@ -26,14 +26,14 @@ class EpisodesController < ApplicationController
             episode_id: episode.id
         ) 
 
-        render json: episode.to_json(serialize)
+        render json: episode.to_json(serialize) 
     end 
 
     private
 
     def serialize
         {
-            :include => [:playlist_episodes, :playlists]
+            :include => [:playlist_episodes, :playlists => { :include => :episodes }]
         }
     end
 end
