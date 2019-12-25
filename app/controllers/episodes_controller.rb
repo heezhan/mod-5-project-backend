@@ -30,14 +30,13 @@ class EpisodesController < ApplicationController
         if episode.playlists.length == 0
             episode.destroy
 
-            render json: episode 
-        else 
+            render json: episode
+        else  
+            byebug 
 
-            # render json: episode.to_json(serialize) to update the allUserEpisodes array and in the front end, episode.
+            render json: episode.to_json(serialize)
         end 
         # when i destroy a playlistepisode, I also want to update the allUserEpisodes array and allUserPlaylists array to reflect those changes
-
-        # if an episode has a playlists length of 0, i should also destroy that episode
     end 
 
     private
