@@ -1,15 +1,6 @@
 require 'unirest'
 
 class EpisodesController < ApplicationController
-    def test
-        response = Unirest.get "https://listen-api.listennotes.com/api/v2/episodes/02f0123246c944e289ee2bb90804e41b",
-        headers:{
-            "X-ListenAPI-Key" => "b45a2e37fb084a6ebc1035393a023abb"
-        }
-
-        render json: response.body
-    end 
-
     def episode
         episode = Episode.find_or_create_by(
             api_id: params[:api_id], 
@@ -27,6 +18,26 @@ class EpisodesController < ApplicationController
         ) 
 
         render json: episode.to_json(serialize) 
+    end 
+
+    def delete
+        playlist_episode = PlaylistEpisode.find_by(playlist_id: params[:playlist_id], episode_id: params[:episode_id])
+
+        playlist_episode.destroy 
+
+        episode = Episode.find(params[:episode_id])
+
+        if episode.playlists.length == 0
+            episode.destroy
+
+            render json: episode 
+        else 
+
+            # render json: episode.to_json(serialize) to update the allUserEpisodes array and in the front end, episode.
+        end 
+        # when i destroy a playlistepisode, I also want to update the allUserEpisodes array and allUserPlaylists array to reflect those changes
+
+        # if an episode has a playlists length of 0, i should also destroy that episode
     end 
 
     private

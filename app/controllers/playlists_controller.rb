@@ -3,7 +3,7 @@ class PlaylistsController < ApplicationController
         playlist = Playlist.create(user_id: params[:user_id], title: params[:title]) 
 
         render json: playlist.to_json(serialize)
-    end 
+    end  
 
     private
 
