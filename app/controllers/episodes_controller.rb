@@ -31,12 +31,9 @@ class EpisodesController < ApplicationController
             episode.destroy
 
             render json: episode
-        else  
-            byebug 
-
+        else   
             render json: episode.to_json(serialize)
         end 
-        # when i destroy a playlistepisode, I also want to update the allUserEpisodes array and allUserPlaylists array to reflect those changes
     end 
 
     private
