@@ -15,7 +15,6 @@ class UsersController < ApplicationController
         else
             user = User.create(username: params[:username], password_digest: params[:password])
 
-            byebug
             render json: user.to_json(serialize)
         end
     end 

@@ -20,7 +20,7 @@ class EpisodesController < ApplicationController
         render json: episode.to_json(serialize) 
     end 
 
-    def delete
+    def destroy
         playlist_episode = PlaylistEpisode.find_by(playlist_id: params[:playlist_id], episode_id: params[:episode_id])
 
         playlist_episode.destroy 
@@ -28,7 +28,7 @@ class EpisodesController < ApplicationController
         episode = Episode.find(params[:episode_id])
 
         if episode.playlists.length == 0
-            episode.destroy
+            # episode.destroy
 
             render json: episode
         else   

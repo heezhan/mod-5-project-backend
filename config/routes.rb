@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   post '/signup', to: "users#signup"
   post '/episode', to: "episodes#episode"
   post '/playlist', to: "playlists#playlist"
-  post '/episodes/delete', to: "episodes#delete"
+  post '/episodes/destroy', to: "episodes#destroy"
+  post '/playlists/destroy', to: "playlists#destroy"
+  post '/playlists/update', to: "playlists#update"
 end
