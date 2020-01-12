@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   post '/episodes/destroy', to: "episodes#destroy"
   post '/playlists/destroy', to: "playlists#destroy"
   post '/playlists/update', to: "playlists#update"
+  post '/update', to: "episodes#update"
 
 end

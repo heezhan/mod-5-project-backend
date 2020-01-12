@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_210556) do
     t.string "publisher_original"
     t.string "description_original"
     t.string "audio"
+    t.string "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

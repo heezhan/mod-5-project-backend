@@ -21,7 +21,8 @@ welcome_to_ageless = Episode.find_or_create_by(
     title_original:"Welcome to Ageless!",
     publisher_original:"Kit Keenan",
     description_original:"Mother-Daughter podcast with Cynthia Rowley and Kit Keenan. We explore fashion, business, wellness, and motherhood through the lens of our adventures around the world.",
-    audio:"https://www.listennotes.com/e/p/64f3f2d8691448ae8c914447f62e7a74/"
+    audio:"https://www.listennotes.com/e/p/64f3f2d8691448ae8c914447f62e7a74/",
+    notes: "hi"
     )
 
 ## Playlist ##

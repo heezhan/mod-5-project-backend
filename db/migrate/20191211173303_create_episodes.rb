@@ -10,6 +10,7 @@ class CreateEpisodes < ActiveRecord::Migration[6.0]
       t.string :publisher_original
       t.string :description_original
       t.string :audio
+      t.string :notes
 
       t.timestamps
     end
