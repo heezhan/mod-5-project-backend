@@ -1,24 +1,7 @@
-# README
+# Podcastr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A podcast app where users can browse and listen to podcasts as well as curate their own playlists
 
-Things you may want to cover:
+Created with a Redux front-end and Ruby on Rails back-end 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Link to front-end: https://github.com/heezhan/mod-5-project-frontend
