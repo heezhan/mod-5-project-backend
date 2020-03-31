@@ -9,7 +9,7 @@ class EpisodesController < ApplicationController
             image: params[:image], 
             podcast_title_original: params[:podcast_title_original], 
             title_original: params[:title_original], publisher_original: params[:publisher_original],description_original: params[:description_original], 
-            audio: params[:audio], notes: ""
+            audio: params[:audio]
         )
 
         playlist_episode = PlaylistEpisode.create(
@@ -18,14 +18,6 @@ class EpisodesController < ApplicationController
         ) 
 
         render json: episode.to_json(serialize) 
-    end 
-
-    def update
-        episode = Episode.find(params[:id])
-
-        episode.update(notes: params[:notes])
-
-        render json: episode.to_json(serialize)
     end 
 
     def destroy
